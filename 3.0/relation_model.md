@@ -80,6 +80,15 @@ exports.model = {
 
 除了用 host 和 port 连接数据库外，也可以通过 `socketPath` 来连接，更多配置选项请见 <https://github.com/mysqljs/mysql#connection-options>
 
+> 支持Emoji：
+>
+> MySQL在5.5.3之后增加了`utf8mb4`字符编码，如果应用需要支持Emoji，必须在创建数据库时将数据库编码设置为`utf8mb4`。然后在MySQL配置文件中明确添加如下配置项：
+> ```
+> ...
+> charset: 'utf8mb4',
+> ...
+> ```
+
 #### SQLite
 
 SQLite 的 Adapter 为 [think-model-sqlite](https://github.com/thinkjs/think-model-sqlite)，底层基于 [sqlite3](https://github.com/mapbox/node-sqlite3) 库实现，使用连接池的方式连接数据库，默认连接数为 1。
